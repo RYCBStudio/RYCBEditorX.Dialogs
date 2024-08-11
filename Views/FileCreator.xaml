@@ -1,0 +1,133 @@
+﻿<Window
+    x:Class="RYCBEditorX.Dialogs.Views.FileCreator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:RYCBEditorX.Dialogs.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:RYCBEditorX.Dialogs.Models"
+    Title="{Binding Title}"
+    Width="444"
+    Height="212"
+    d:DataContext="{d:DesignInstance Type=models:FileCreatorViewModel}"
+    Background="{DynamicResource BackgroundBrush}"
+    Icon="/RYCBEditorX;component/Assets/Icons/newfile.png"
+    Loaded="Window_Loaded"
+    PreviewKeyDown="Window_PreviewKeyDown"
+    ResizeMode="CanMinimize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <FontFamily x:Key="iconfont">
+            /RYCBEditorX;component/Assets/Fonts/#ali-ifont
+        </FontFamily>
+        <Style
+            x:Key="InvalidStyle"
+            BasedOn="{StaticResource TextBoxBaseStyle}"
+            TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border
+                            x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ScrollViewer
+                                x:Name="PART_ContentHost"
+                                Focusable="false"
+                                HorizontalScrollBarVisibility="Hidden"
+                                VerticalScrollBarVisibility="Hidden" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="Red" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="MainPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Margin="5" Content="{DynamicResource FC.Title}" />
+            <TextBox
+                x:Name="Filename"
+                Height="30"
+                Margin="5"
+                VerticalContentAlignment="Center"
+                hc:InfoElement.Necessary="True"
+                hc:InfoElement.Placeholder="Your file name"
+                TextChanged="Filename_TextChanged">
+                <TextBox.RenderTransform>
+                    <TranslateTransform x:Name="tt" />
+                </TextBox.RenderTransform>
+            </TextBox>
+        </StackPanel>
+        <ListBox Grid.Row="1">
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0,0,5,0"
+                        FontFamily="{StaticResource iconfont}"
+                        Text="&#xe609;" />
+                    <TextBlock Text="C#" />
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0,0,5,0"
+                        FontFamily="{StaticResource iconfont}"
+                        Text="&#xe690;" />
+                    <TextBlock Text="Python" />
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0,0,5,0"
+                        FontFamily="{StaticResource iconfont}"
+                        Text="&#xf1eb;" />
+                    <TextBlock Text="Markdown" />
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0,0,5,0"
+                        FontFamily="{StaticResource iconfont}"
+                        Text="&#xe601;" />
+                    <TextBlock Text="Plain Text" />
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+        <StackPanel
+            Grid.Row="2"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <Button
+                x:Name="Cancel"
+                Margin="3"
+                Click="Cancel_Click"
+                Content="{DynamicResource Global.Cancel}"
+                FontSize="10" />
+            <Button
+                x:Name="OK"
+                Margin="3"
+                Click="OK_Click"
+                Content="{DynamicResource Global.OK}"
+                FontSize="10" />
+        </StackPanel>
+    </Grid>
+</Window>

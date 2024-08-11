@@ -1,0 +1,105 @@
+﻿<hc:Window
+    x:Class="RYCBEditorX.Dialogs.Views.TextEditorSearchPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:local="clr-namespace:RYCBEditorX.Dialogs.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodels="clr-namespace:RYCBEditorX.Dialogs.ViewModels"
+    Title="TextEditorSearchPanel"
+    Width="278"
+    Height="85"
+    d:DataContext="{d:DesignInstance Type=viewmodels:SearchPanelViewModel}"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <FontFamily x:Key="iconfont">
+            /RYCBEditorX;component/Assets/Fonts/#ali-ifont
+        </FontFamily>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="8*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button
+            Content="&#xe845;"
+            FontFamily="{StaticResource iconfont}"
+            Style="{StaticResource ButtonDashed.Small}" />
+        <hc:FlexPanel
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="5,0,0,0">
+            <hc:ButtonGroup VerticalAlignment="Center">
+                <ToggleButton
+                    x:Name="CaseSensitiveSwitch"
+                    Content="&#xe683;"
+                    FontFamily="{StaticResource iconfont}"
+                    IsChecked="{Binding CaseSensitive}"
+                    Style="{StaticResource ToggleButtonDefault}" />
+                <ToggleButton
+                    x:Name="MatchWholeWordSwitch"
+                    Content="&#xe682;"
+                    FontFamily="{StaticResource iconfont}"
+                    IsChecked="{Binding MatchWholeWord}"
+                    Style="{StaticResource ToggleButtonDefault}" />
+                <ToggleButton
+                    x:Name="RegexSwitch"
+                    Margin="0,0,0,0"
+                    Content="&#xe6aa;"
+                    FontFamily="{StaticResource iconfont}"
+                    IsChecked="{Binding Regex}"
+                    Style="{StaticResource ToggleButtonDefault}" />
+            </hc:ButtonGroup>
+        </hc:FlexPanel>
+        <hc:FlexPanel
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="5,0,5,0"
+            HorizontalAlignment="Right">
+            <hc:ButtonGroup VerticalAlignment="Center">
+                <Button
+                    x:Name="ReplaceBtn"
+                    Click="ReplaceBtn_Click"
+                    Content="&#xe60a;"
+                    FontFamily="{StaticResource iconfont}"
+                    FontSize="15"
+                    Style="{StaticResource ButtonDashed}" />
+                <Button
+                    x:Name="ReplaceAllBtn"
+                    Click="ReplaceAllBtn_Click"
+                    Content="&#xe608;"
+                    FontFamily="{StaticResource iconfont}"
+                    FontSize="16"
+                    Style="{StaticResource ButtonDashed}" />
+            </hc:ButtonGroup>
+        </hc:FlexPanel>
+        <hc:TextBox x:Name="SearchBar" Grid.Column="1" />
+        <hc:TextBox
+            x:Name="ReplaceBar"
+            Grid.Row="1"
+            Grid.Column="1" />
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Content="&#xe602;"
+            FontFamily="{StaticResource iconfont}"
+            FontSize="5" />
+        <Button
+            Grid.Column="2"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            Content="&#xe614;"
+            Click="Button_Click"
+            FontFamily="{StaticResource iconfont}" />
+    </Grid>
+</hc:Window>

@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="RYCBEditorX.Dialogs.Views.ProjectCreatingStep2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RYCBEditorX.Dialogs.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="507"
+    d:DesignWidth="701"
+    mc:Ignorable="d">
+
+    <Grid>
+        <DockPanel>
+            <DockPanel Margin="10,50,10,0" DockPanel.Dock="Top">
+                <Label Content="Name" FontSize="12" />
+                <TextBox
+                    Margin="1"
+                    DockPanel.Dock="Right"
+                    FontSize="12" />
+            </DockPanel>
+            <DockPanel Margin="10,0,10,0" DockPanel.Dock="Top">
+                <Label
+                    Content="Location"
+                    DockPanel.Dock="Left"
+                    FontSize="12" />
+                <Button
+                    x:Name="OpenFolder"
+                    Width="32"
+                    Content="..."
+                    DockPanel.Dock="Right" />
+                <TextBox
+                    Margin="1"
+                    DockPanel.Dock="Right"
+                    FontSize="12" />
+            </DockPanel>
+            <Grid
+                Margin="0,0,10,10"
+                VerticalAlignment="Bottom"
+                DockPanel.Dock="Bottom">
+                <Button
+                    x:Name="NextStep"
+                    HorizontalAlignment="Right"
+                    Content="Continue"
+                    FontSize="12" />
+            </Grid>
+        </DockPanel>
+    </Grid>
+</UserControl>

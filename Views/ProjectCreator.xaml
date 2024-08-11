@@ -1,0 +1,59 @@
+﻿<Window
+    x:Class="RYCBEditorX.Dialogs.Views.ProjectCreator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RYCBEditorX.Dialogs.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:RYCBEditorX.Dialogs.Models"
+    Title="{Binding Title}"
+    Width="1021"
+    Height="579"
+    d:DataContext="{d:DesignInstance Type=models:ProjectCreatorViewModel}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <FontFamily x:Key="iconfont">
+            /RYCBEditorX;component/Assets/Fonts/#ali-ifont
+        </FontFamily>
+    </Window.Resources>
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="7*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Grid.ColumnSpan="2"
+            VerticalContentAlignment="Center"
+            Content="Choose the project you want to create."
+            FontSize="12" />
+        <ListBox
+            Grid.Row="1"
+            Margin="5,1,5,5"
+            SelectionChanged="ListBox_SelectionChanged">
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Width="auto"
+                        FontFamily="{StaticResource iconfont}"
+                        FontSize="20"
+                        Text="&#xe688;" />
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="12">
+                        RYCB Editor Package
+                    </TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+        <ContentPresenter
+            x:Name="contentPresenter"
+            Grid.Row="1"
+            Grid.Column="1" />
+    </Grid>
+</Window>
