@@ -1,6 +1,4 @@
 ﻿using ICSharpCode.AvalonEdit;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using Prism.Mvvm;
 
 namespace RYCBEditorX.Dialogs.ViewModels

@@ -13,11 +13,11 @@ public partial class ProjectCreator : Window
         InitializeComponent();
         if (GlobalConfig.Skin == "dark")
         {
-            MainGrid.Background = (Brush)Application.Current.Resources["DarkBackgroud"];
+            MainGrid.Background = (Brush)Application.Current.Resources["DarkBackGround"];
         }
         else
         {
-            MainGrid.Background = (Brush)Application.Current.Resources["LightBackgroud"];
+            MainGrid.Background = (Brush)Application.Current.Resources["LightBackGround"];
         }
     }
 

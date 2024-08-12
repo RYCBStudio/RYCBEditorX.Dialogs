@@ -1,5 +1,4 @@
-﻿using System.Windows.Shapes;
-using System;
+﻿using System;
 using Prism.Commands;
 using Prism.Mvvm;
 using RYCBEditorX.Dialogs.Views;

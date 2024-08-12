@@ -23,11 +23,11 @@ public partial class FileCreator : Window
         InitializeComponent();
         if (GlobalConfig.Skin == "dark")
         {
-            MainPanel.Background = (Brush)Application.Current.Resources["DarkBackgroud"];
+            MainPanel.Background = (Brush)Application.Current.Resources["DarkBackGround"];
         }
         else
         {
-            MainPanel.Background = (Brush)Application.Current.Resources["LightBackgroud"];
+            MainPanel.Background = (Brush)Application.Current.Resources["LightBackGround"];
         }
     }
 

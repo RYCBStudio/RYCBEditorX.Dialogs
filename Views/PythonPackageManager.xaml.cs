@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using Microsoft.TeamFoundation.Common;
 using RYCBEditorX.Dialogs.Models;
 using RYCBEditorX.Utils;
 using Sunny.UI;
