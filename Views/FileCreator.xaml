@@ -21,7 +21,7 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
-        <FontFamily x:Key="iconfont">
+        <FontFamily x:Key="Iconfont">
             /RYCBEditorX;component/Assets/Fonts/#ali-ifont
         </FontFamily>
         <Style
@@ -70,7 +70,7 @@
                 hc:InfoElement.Placeholder="Your file name"
                 TextChanged="Filename_TextChanged">
                 <TextBox.RenderTransform>
-                    <TranslateTransform x:Name="tt" />
+                    <TranslateTransform x:Name="Tt" />
                 </TextBox.RenderTransform>
             </TextBox>
         </StackPanel>
@@ -79,7 +79,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Margin="0,0,5,0"
-                        FontFamily="{StaticResource iconfont}"
+                        FontFamily="{StaticResource Iconfont}"
                         Text="&#xe609;" />
                     <TextBlock Text="C#" />
                 </StackPanel>
@@ -88,7 +88,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Margin="0,0,5,0"
-                        FontFamily="{StaticResource iconfont}"
+                        FontFamily="{StaticResource Iconfont}"
                         Text="&#xe690;" />
                     <TextBlock Text="Python" />
                 </StackPanel>
@@ -97,7 +97,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Margin="0,0,5,0"
-                        FontFamily="{StaticResource iconfont}"
+                        FontFamily="{StaticResource Iconfont}"
                         Text="&#xf1eb;" />
                     <TextBlock Text="Markdown" />
                 </StackPanel>
@@ -106,7 +106,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Margin="0,0,5,0"
-                        FontFamily="{StaticResource iconfont}"
+                        FontFamily="{StaticResource Iconfont}"
                         Text="&#xe601;" />
                     <TextBlock Text="Plain Text" />
                 </StackPanel>
@@ -123,10 +123,10 @@
                 Content="{DynamicResource Global.Cancel}"
                 FontSize="10" />
             <Button
-                x:Name="OK"
+                x:Name="Ok"
                 Margin="3"
                 Click="OK_Click"
-                Content="{DynamicResource Global.OK}"
+                Content="{DynamicResource Global.Ok}"
                 FontSize="10" />
         </StackPanel>
     </Grid>

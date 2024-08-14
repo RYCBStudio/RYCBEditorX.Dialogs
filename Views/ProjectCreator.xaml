@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
-        <FontFamily x:Key="iconfont">
+        <FontFamily x:Key="Iconfont">
             /RYCBEditorX;component/Assets/Fonts/#ali-ifont
         </FontFamily>
     </Window.Resources>
@@ -39,7 +39,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Width="auto"
-                        FontFamily="{StaticResource iconfont}"
+                        FontFamily="{StaticResource Iconfont}"
                         FontSize="20"
                         Text="&#xe688;" />
                     <TextBlock
@@ -52,7 +52,7 @@
             </ListBoxItem>
         </ListBox>
         <ContentPresenter
-            x:Name="contentPresenter"
+            x:Name="ContentPresenter"
             Grid.Row="1"
             Grid.Column="1" />
     </Grid>

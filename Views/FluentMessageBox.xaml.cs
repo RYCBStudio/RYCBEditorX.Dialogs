@@ -28,7 +28,7 @@ public partial class FluentMessageBox : Window
             "Error" => (Brush)Resources["ErrorColor"],
             _ => (Brush)Resources["InfoColor"],
         };
-        OKBtn.Background = Theme switch
+        OkBtn.Background = Theme switch
         {
             "Info" => (Brush)Resources["InfoColor"],
             "Warn" => (Brush)Resources["WarnColor"],

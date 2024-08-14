@@ -23,6 +23,6 @@ public partial class ProjectCreator : Window
 
     private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        contentPresenter.Content = new ProjectCreatingStep1();
+        ContentPresenter.Content = new ProjectCreatingStep1();
     }
 }

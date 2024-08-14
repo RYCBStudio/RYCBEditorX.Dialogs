@@ -62,7 +62,7 @@ public partial class FileCreator : Window
         {
             if (Filename.Text.IsNullOrEmpty()) {
                 Filename.Style = (Style)Resources["InvalidStyle"];
-                ElasticAnimation(tt, 3);
+                ElasticAnimation(Tt, 3);
                 Filename.Focus();
                 return;
             }
@@ -82,7 +82,7 @@ public partial class FileCreator : Window
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        ElasticAnimation(tt, 3);
+        ElasticAnimation(Tt, 3);
         Filename.Focus();
     }
 
@@ -96,7 +96,7 @@ public partial class FileCreator : Window
         if (Filename.Text.IsNullOrEmpty())
         {
             Filename.Style = (Style)Resources["InvalidStyle"];
-            ElasticAnimation(tt, 3);
+            ElasticAnimation(Tt, 3);
             Filename.Focus();
             return;
         }

@@ -13,7 +13,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
-        <FontFamily x:Key="iconfont">
+        <FontFamily x:Key="Iconfont">
             /RYCBEditorX;component/Assets/Fonts/#ali-ifont
         </FontFamily>
     </Window.Resources>
@@ -96,7 +96,7 @@
                 Grid.Row="4"
                 Grid.Column="1" />
             <CheckBox
-                x:Name="UseBPSR"
+                x:Name="UseBpsr"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -112,23 +112,23 @@
                 <Button
                     Click="DeleteSelectedItem"
                     Content="&#xe628;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     Style="{StaticResource ButtonGroupItemHorizontalFirst}" />
                 <Button
                     Click="SaveItem"
                     Content="&#xe67c;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     Style="{StaticResource ButtonGroupItemBaseStyle}" />
                 <Button
                     Click="RefreshItems"
                     Content="&#xe640;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     FontWeight="Bold"
                     Style="{StaticResource ButtonGroupItemBaseStyle}" />
                 <Button
                     Click="ImportProfile"
                     Content="&#xe675;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     Style="{StaticResource ButtonGroupItemHorizontalLast}" />
             </hc:ButtonGroup>
         </ToolBar>

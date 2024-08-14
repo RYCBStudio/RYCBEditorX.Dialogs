@@ -14,7 +14,7 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
-        <FontFamily x:Key="iconfont">
+        <FontFamily x:Key="Iconfont">
             /RYCBEditorX;component/Assets/Fonts/#ali-ifont
         </FontFamily>
     </Window.Resources>
@@ -31,7 +31,7 @@
         </Grid.ColumnDefinitions>
         <Button
             Content="&#xe845;"
-            FontFamily="{StaticResource iconfont}"
+            FontFamily="{StaticResource Iconfont}"
             Style="{StaticResource ButtonDashed.Small}" />
         <hc:FlexPanel
             Grid.Row="2"
@@ -41,20 +41,20 @@
                 <ToggleButton
                     x:Name="CaseSensitiveSwitch"
                     Content="&#xe683;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     IsChecked="{Binding CaseSensitive}"
                     Style="{StaticResource ToggleButtonDefault}" />
                 <ToggleButton
                     x:Name="MatchWholeWordSwitch"
                     Content="&#xe682;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     IsChecked="{Binding MatchWholeWord}"
                     Style="{StaticResource ToggleButtonDefault}" />
                 <ToggleButton
                     x:Name="RegexSwitch"
                     Margin="0,0,0,0"
                     Content="&#xe6aa;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     IsChecked="{Binding Regex}"
                     Style="{StaticResource ToggleButtonDefault}" />
             </hc:ButtonGroup>
@@ -69,14 +69,14 @@
                     x:Name="ReplaceBtn"
                     Click="ReplaceBtn_Click"
                     Content="&#xe60a;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     FontSize="15"
                     Style="{StaticResource ButtonDashed}" />
                 <Button
                     x:Name="ReplaceAllBtn"
                     Click="ReplaceAllBtn_Click"
                     Content="&#xe608;"
-                    FontFamily="{StaticResource iconfont}"
+                    FontFamily="{StaticResource Iconfont}"
                     FontSize="16"
                     Style="{StaticResource ButtonDashed}" />
             </hc:ButtonGroup>
@@ -92,7 +92,7 @@
             Background="Transparent"
             BorderBrush="Transparent"
             Content="&#xe602;"
-            FontFamily="{StaticResource iconfont}"
+            FontFamily="{StaticResource Iconfont}"
             FontSize="5" />
         <Button
             Grid.Column="2"
@@ -100,6 +100,6 @@
             BorderBrush="Transparent"
             Content="&#xe614;"
             Click="Button_Click"
-            FontFamily="{StaticResource iconfont}" />
+            FontFamily="{StaticResource Iconfont}" />
     </Grid>
 </hc:Window>

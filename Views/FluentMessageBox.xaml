@@ -69,7 +69,7 @@
                         Command="{Binding CancelCommand}"
                         Content="Cancel" />
                     <Button
-                        x:Name="OKBtn"
+                        x:Name="OkBtn"
                         Width="80"
                         Margin="5"
                         Background="{StaticResource InfoColor}"

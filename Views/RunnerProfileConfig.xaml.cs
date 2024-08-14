@@ -40,7 +40,7 @@ public partial class RunnerProfileConfig : Window
         ItprArgs.Text = icbfp.GetInfo(ICBFileProcessor.InfoType.itpr_args);
         Itpr.Text = icbfp.GetInfo(ICBFileProcessor.InfoType.itpr);
         ScriptArgs.Text = icbfp.GetInfo(ICBFileProcessor.InfoType.script_args);
-        UseBPSR.IsChecked = bool.Parse(icbfp.GetInfo(ICBFileProcessor.InfoType.use_bpsr));
+        UseBpsr.IsChecked = bool.Parse(icbfp.GetInfo(ICBFileProcessor.InfoType.use_bpsr));
         icbfp = null;
     }
 
@@ -66,7 +66,7 @@ public partial class RunnerProfileConfig : Window
             icbfp.SetInfo(ICBFileProcessor.InfoType.itpr_args, ItprArgs.Text);
             icbfp.SetInfo(ICBFileProcessor.InfoType.itpr, Itpr.Text);
             icbfp.SetInfo(ICBFileProcessor.InfoType.script_args, ScriptArgs.Text);
-            icbfp.SetInfo(ICBFileProcessor.InfoType.use_bpsr, UseBPSR.IsChecked);
+            icbfp.SetInfo(ICBFileProcessor.InfoType.use_bpsr, UseBpsr.IsChecked);
             icbfp = null;
         }
     }

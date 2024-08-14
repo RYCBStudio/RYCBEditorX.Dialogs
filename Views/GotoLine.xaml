@@ -36,11 +36,11 @@
             hc:InfoElement.Necessary="True"
             Style="{StaticResource TextBoxBaseStyle}" />
         <Button
-            x:Name="OKBtn"
+            x:Name="OkBtn"
             Grid.Row="3"
             HorizontalAlignment="Right"
             Click="Button_Click"
-            Content="{DynamicResource Global.OK}"
+            Content="{DynamicResource Global.Ok}"
             Style="{StaticResource MessageBoxButtonStyle}" />
         <Button
             Grid.Row="3"

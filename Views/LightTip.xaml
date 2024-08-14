@@ -21,13 +21,13 @@
         <SolidColorBrush x:Key="InfoColor" Color="#0078D7" />
         <SolidColorBrush x:Key="WarnColor" Color="#FFEACF1D" />
         <SolidColorBrush x:Key="ErrorColor" Color="#FFE3371F" />
-        <FontFamily x:Key="iconfont">/RYCBEditorX;component/Assets/Fonts/#ali-ifont</FontFamily>
+        <FontFamily x:Key="Iconfont">/RYCBEditorX;component/Assets/Fonts/#ali-ifont</FontFamily>
     </Window.Resources>
     <DockPanel x:Name="MainPanel">
         <TextBlock
             x:Name="Icon"
             DockPanel.Dock="Left"
-            FontFamily="{StaticResource iconfont}"
+            FontFamily="{StaticResource Iconfont}"
             FontSize="40"
             Foreground="{Binding IconBrush}"
             Text="{Binding Icon}" />
@@ -47,7 +47,7 @@
             Click="Button_Click"
             Content="&#xE614;"
             DockPanel.Dock="Right"
-            FontFamily="{StaticResource iconfont}"
+            FontFamily="{StaticResource Iconfont}"
             FontSize="20"
             Style="{StaticResource BaseStyle}" />
     </DockPanel>

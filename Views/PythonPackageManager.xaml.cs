@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.Json;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using HandyControl.Tools.Extension;
 using RYCBEditorX.Dialogs.Models;
 using RYCBEditorX.Utils;
 using Sunny.UI;
@@ -23,7 +25,6 @@ public partial class PythonPackageManager : Window
     private List<string> LocalPackageNames = [];
     private List<PythonPackageInfo> LocalPythonPackages = [];
     public string query = "";
-    private PackageManagerProgressWindow pw;
     public static PythonPackageManager Instance
     {
         get; private set;
@@ -33,10 +34,8 @@ public partial class PythonPackageManager : Window
     {
         InitializeComponent();
         Instance = this;
-        pw = new();
         DataContext = new PythonPackageManagerViewModel();
         GlobalWindows.ActivatingWindows.Add(this);
-        GlobalWindows.ActivatingWindows.Add(pw);
     }
     private void GetAllPackages()
     {
@@ -206,15 +205,12 @@ public partial class PythonPackageManager : Window
         {
             if (((TextBox)sender).Text.IsNullOrEmpty())
             {
-                ElasticAnimation(tt, 2);
+                ElasticAnimation(Tt, 2);
                 return;
             }
-            pw.Topmost = true;
-            pw.ProgBar.IsIndeterminate = true;
-#pragma warning disable CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
-            pw.Dispatcher.InvokeAsync(pw.Show);
-#pragma warning restore CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
-                              //var dialog = this.Dispatcher.InvokeAsync(pw.Show);
+            Mask.Show();
+            Loading.Show();
+            //var dialog = this.Dispatcher.InvokeAsync(pw.Show);
             ResLst.ItemsSource = null;
             var _res = PypiHelper.ParseLinkWithContent(await PypiHelper.GetHtml(string.Format(baseAdd, SearchBox.Text, currentPage.ToString())));
             var res = PypiHelper.ConvertToClass(_res.Item1);
@@ -222,7 +218,8 @@ public partial class PythonPackageManager : Window
             ResLst.ItemsSource = resLst;
             CurrentPage.Text = $"{currentPage}/{_res.Item2}";
             totalpages = Convert.ToInt32(_res.Item2);
-            pw.Hide();
+            Mask.Hide();
+            Loading.Hide();
         }
         else
         {
@@ -247,7 +244,7 @@ public partial class PythonPackageManager : Window
                     }
                 }
                 SearchBox.BorderBrush = (SolidColorBrush)Resources["NotFound"];
-                ElasticAnimation(tt_local, 2);
+                ElasticAnimation(TtLocal, 2);
             }
         }
     }
