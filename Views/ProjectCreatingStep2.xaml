@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="507"
     d:DesignWidth="701"
+    FontFamily="{DynamicResource Main}"
     mc:Ignorable="d">
-
     <Grid>
         <DockPanel>
             <DockPanel Margin="10,50,10,0" DockPanel.Dock="Top">

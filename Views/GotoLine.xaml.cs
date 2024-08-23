@@ -9,7 +9,7 @@ namespace RYCBEditorX.Dialogs.Views;
 /// </summary>
 public partial class GotoLineWindow : Window
 {
-    private int totalLines;
+    private readonly int totalLines;
 
     public bool isCompleted;
     public static GotoLineWindow Instance { get; private set; }
@@ -43,7 +43,7 @@ public partial class GotoLineWindow : Window
     private void Window_KeyDown(object sender, KeyEventArgs e)
     {
         if (e.Key == Key.Enter) {
-            if (TextBox.Text.Length > 0)
+            if (TextBox.Text.Length > 0 & TextBox.Text.IsNumber())
             {
                 Line = Convert.ToInt32(TextBox.Text);
                 isCompleted = true;

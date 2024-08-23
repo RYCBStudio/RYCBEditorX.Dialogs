@@ -11,6 +11,7 @@
     Width="800"
     Height="450"
     d:DataContext="{d:DesignInstance Type=models:PythonPackageManagerViewModel}"
+    FontFamily="{DynamicResource Main}"
     mc:Ignorable="d">
     <Window.Resources>
         <FontFamily x:Key="Iconfont">

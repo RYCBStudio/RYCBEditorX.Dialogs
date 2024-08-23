@@ -9,6 +9,7 @@
     Title="{DynamicResource RPC.Title}"
     Width="563"
     Height="329"
+    FontFamily="{DynamicResource Main}"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">

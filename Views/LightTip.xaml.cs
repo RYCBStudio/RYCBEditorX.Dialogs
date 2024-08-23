@@ -9,8 +9,8 @@ namespace RYCBEditorX.Dialogs.Views;
 /// </summary>
 public partial class LightTip : Window
 {
-    private Window _Parent;
-    private System.Timers.Timer _Timer;
+    private readonly Window _Parent;
+    private readonly System.Timers.Timer _Timer;
 
     public static LightTip Instance
     {

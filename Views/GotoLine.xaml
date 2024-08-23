@@ -11,6 +11,7 @@
     Width="305"
     Height="100"
     d:DataContext="{d:DesignInstance Type=models:GotoLineViewModel}"
+    FontFamily="{DynamicResource Main}"
     KeyDown="Window_KeyDown"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"

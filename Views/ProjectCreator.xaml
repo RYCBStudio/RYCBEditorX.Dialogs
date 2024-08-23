@@ -10,6 +10,7 @@
     Width="1021"
     Height="579"
     d:DataContext="{d:DesignInstance Type=models:ProjectCreatorViewModel}"
+    FontFamily="{DynamicResource Main}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>

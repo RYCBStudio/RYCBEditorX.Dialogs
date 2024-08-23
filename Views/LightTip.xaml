@@ -13,6 +13,7 @@
     d:DataContext="{d:DesignInstance Type={x:Type viewmodels:LightTipViewModel}}"
     Activated="Window_ContentRendered"
     Background="{DynamicResource BackgroundBrush}"
+    FontFamily="{DynamicResource Main}"
     ResizeMode="NoResize"
     Topmost="True"
     WindowStyle="None"

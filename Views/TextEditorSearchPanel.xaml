@@ -11,6 +11,7 @@
     Width="278"
     Height="85"
     d:DataContext="{d:DesignInstance Type=viewmodels:SearchPanelViewModel}"
+    FontFamily="{DynamicResource Main}"
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
@@ -98,8 +99,8 @@
             Grid.Column="2"
             Background="Transparent"
             BorderBrush="Transparent"
-            Content="&#xe614;"
             Click="Button_Click"
+            Content="&#xe614;"
             FontFamily="{StaticResource Iconfont}" />
     </Grid>
 </hc:Window>

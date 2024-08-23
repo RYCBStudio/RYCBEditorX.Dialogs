@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text.Json;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,9 +19,9 @@ namespace RYCBEditorX.Dialogs.Views;
 public partial class PythonPackageManager : Window
 {
     public int currentPage = 1, totalpages;
-    private string baseAdd = "https://pypi.org/search/?q={0}&page={1}";
+    private readonly string baseAdd = "https://pypi.org/search/?q={0}&page={1}";
     public List<GeneralPackageInfo> resLst = [];
-    private List<string> LocalPackageNames = [];
+    private readonly List<string> LocalPackageNames = [];
     private List<PythonPackageInfo> LocalPythonPackages = [];
     public string query = "";
     public static PythonPackageManager Instance
