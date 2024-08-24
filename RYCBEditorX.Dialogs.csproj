@@ -23,6 +23,7 @@
     <PackageReference Include="System.Management" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RYCBEditorX.MySQL\RYCBEditorX.MySQL.csproj" />
     <ProjectReference Include="..\RYCBEditorX.Utils\RYCBEditorX.Utils.csproj" />
   </ItemGroup>
   <ItemGroup>
