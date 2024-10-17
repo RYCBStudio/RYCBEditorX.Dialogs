@@ -25,7 +25,7 @@ public partial class RunnerProfileConfig : Window
     public RunnerProfileConfig(List<ProfileInfo> profileInfos, List<string> profilePathsList)
     {
         InitializeComponent();
-        this.ProfileList = profileInfos;
+        ProfileList = profileInfos;
         ProfilesListBox.ItemsSource = ProfileList;
         ProfilePathsList = profilePathsList;
         RefreshItems(this, new());
@@ -99,7 +99,7 @@ public partial class RunnerProfileConfig : Window
         GlobalConfig.CurrentProfiles.Clear();
         foreach (var item in ProfilePathsList) {
             var icbfp = new ICBFileProcessor(item);
-            GlobalConfig.RunProfile rp = new()
+            RunProfile rp = new()
             {
                 Name = icbfp.GetInfo(ICBFileProcessor.InfoType.name),
                 ScriptPath = icbfp.GetInfo(ICBFileProcessor.InfoType.script),

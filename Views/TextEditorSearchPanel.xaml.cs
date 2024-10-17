@@ -64,6 +64,6 @@ public partial class TextEditorSearchPanel : HandyControl.Controls.Window
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        this.Close();
+        Close();
     }
 }

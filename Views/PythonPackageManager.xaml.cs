@@ -10,13 +10,12 @@ using System.Windows.Media.Animation;
 using HandyControl.Tools.Extension;
 using RYCBEditorX.Dialogs.Models;
 using RYCBEditorX.Utils;
-using Sunny.UI;
 
 namespace RYCBEditorX.Dialogs.Views;
 /// <summary>
 /// PythonPackageManager.xaml 的交互逻辑
 /// </summary>
-public partial class PythonPackageManager : Window
+public partial class PythonPackageManager : HandyControl.Controls.Window
 {
     public int currentPage = 1, totalpages;
     private readonly string baseAdd = "https://pypi.org/search/?q={0}&page={1}";
@@ -224,16 +223,15 @@ public partial class PythonPackageManager : Window
         {
             if (((FrameworkElement)sender).Tag.ToString() == "Local")
             {
-
                 foreach (var item in (List<PythonPackageInfo>)ListBoxLocalPackages.ItemsSource)
                 {
-                    if (item.Name.Contains(SearchBox.Text)
-                        || item.Version.Contains(SearchBox.Text)
-                        || item.Description.Contains(SearchBox.Text)
-                        || item.Summary.Contains(SearchBox.Text)
-                        || item.Author.Contains(SearchBox.Text)
-                        || item.RequiredBy.Contains(SearchBox.Text)
-                        || item.Requires.Contains(SearchBox.Text))
+                    if (item.Name.ContainsNotNull(SearchBox.Text)
+                        || item.Version.ContainsNotNull(SearchBox.Text)
+                        || item.Description.ContainsNotNull(SearchBox.Text)
+                        || item.Summary.ContainsNotNull(SearchBox.Text)
+                        || item.Author.ContainsNotNull(SearchBox.Text)
+                        || item.RequiredBy.ContainsNotNull(SearchBox.Text)
+                        || item.Requires.ContainsNotNull(SearchBox.Text))
                     {
                         ListBoxLocalPackages.SelectedItem = item;
                         ListBoxLocalPackages.Focus();

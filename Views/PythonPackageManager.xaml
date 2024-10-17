@@ -1,4 +1,4 @@
-﻿<Window
+﻿<hc:Window
     x:Class="RYCBEditorX.Dialogs.Views.PythonPackageManager"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -18,9 +18,6 @@
             /RYCBEditorX;component/Assets/Fonts/#ali-ifont
         </FontFamily>
         <Style x:Key="TabItemStyle" TargetType="{x:Type TabItem}">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="BorderBrush" Value="#FFACACAC" />
             <Setter Property="Margin" Value="0" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -36,6 +33,7 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Foreground="{TemplateBinding Foreground}"
+                                Style="{StaticResource TextBlockBaseStyle}"
                                 Text="{TemplateBinding Header}"
                                 TextTrimming="CharacterEllipsis"
                                 ToolTip="{TemplateBinding Header}"
@@ -96,10 +94,8 @@
             <Setter Property="Padding" Value="2" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="BorderBrush" Value="#FFACACAC" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type TabControl}">
@@ -189,8 +185,22 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style
+            x:Key="TBlockRight"
+            BasedOn="{StaticResource TextBlockBaseStyle}"
+            TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="TextAlignment" Value="Right" />
+        </Style>
+        <Style
+            x:Key="TBlockLeft"
+            BasedOn="{StaticResource TextBlockBaseStyle}"
+            TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="TextAlignment" Value="Left" />
+        </Style>
     </Window.Resources>
-    <Grid Background="#FF1D1D1D">
+    <Grid>
         <TabControl
             x:Name="MainTabCtrl"
             Background="Transparent"
@@ -264,21 +274,19 @@
                                     <TextBlock
                                         Grid.Column="0"
                                         FontWeight="Bold"
-                                        Foreground="White"
-                                        Text="{Binding Name}"
-                                        TextAlignment="Left" />
+                                        Style="{StaticResource TBlockLeft}"
+                                        Text="{Binding Name}" />
                                     <TextBlock
                                         Grid.Column="1"
                                         Foreground="Gray"
-                                        Text="{Binding Version}"
-                                        TextAlignment="Right" />
+                                        Style="{StaticResource TBlockRight}"
+                                        Text="{Binding Version}" />
                                     <TextBlock
                                         Grid.Row="1"
                                         Grid.ColumnSpan="2"
                                         Background="Transparent"
-                                        Foreground="White"
-                                        Text="{Binding Description}"
-                                        TextAlignment="Left" />
+                                        Style="{StaticResource TBlockLeft}"
+                                        Text="{Binding Description}" />
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -296,26 +304,23 @@
                         <Label
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Name"
-                            Foreground="White" />
+                            Content="Name" />
                         <Label
                             Grid.Row="1"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Version"
-                            Foreground="White" />
+                            Content="Version" />
                         <Label
                             Grid.Row="2"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Description"
-                            Foreground="White" />
+                            Content="Description" />
                         <TextBlock
                             x:Name="TBlkName"
                             Grid.Column="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Foreground="White"
+                            Style="{StaticResource TextBlockBaseStyle}"
                             Text="" />
                         <TextBlock
                             x:Name="TBlkVer"
@@ -323,7 +328,7 @@
                             Grid.Column="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Foreground="White"
+                            Style="{StaticResource TextBlockBaseStyle}"
                             Text="" />
                         <TextBox
                             x:Name="TBlkDesc"
@@ -343,9 +348,9 @@
                             Margin="100,0,0,0"
                             VerticalAlignment="Center"
                             DockPanel.Dock="Left"
-                            FontSize="20">
-                            1 / 1
-                        </TextBlock>
+                            FontSize="20"
+                            Style="{StaticResource TextBlockBaseStyle}"
+                            Text="1 / 1" />
                         <Button
                             Margin="2.5,0,2.5,0"
                             Command="{Binding EndPageCmd}"
@@ -425,7 +430,6 @@
                             x:Name="SearchBoxLocal"
                             Margin="5,5,25,5"
                             Background="Transparent"
-                            Foreground="White"
                             InputMethod.IsInputMethodEnabled="True"
                             IsReadOnly="False"
                             KeyDown="SearchOnKeyDown"
@@ -472,26 +476,24 @@
                                     <TextBlock
                                         Grid.Column="0"
                                         FontWeight="Bold"
-                                        Foreground="White"
-                                        Text="{Binding Name}"
-                                        TextAlignment="Left" />
+                                        Style="{StaticResource TBlockLeft}"
+                                        Text="{Binding Name}" />
                                     <TextBlock
                                         Grid.Column="1"
                                         Foreground="Gray"
-                                        Text="{Binding Author}"
-                                        TextAlignment="Right" />
+                                        Style="{StaticResource TBlockRight}"
+                                        Text="{Binding Author}" />
                                     <TextBlock
                                         Grid.Row="1"
                                         Grid.Column="0"
-                                        Foreground="White"
+                                        Style="{StaticResource TBlockLeft}"
                                         Text="{Binding Version}" />
                                     <TextBlock
                                         Grid.Row="2"
                                         Grid.ColumnSpan="2"
                                         Background="Transparent"
-                                        Foreground="White"
-                                        Text="{Binding Summary}"
-                                        TextAlignment="Left" />
+                                        Style="{StaticResource TBlockLeft}"
+                                        Text="{Binding Summary}" />
                                 </Grid>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
@@ -512,44 +514,38 @@
                         <Label
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Name"
-                            Foreground="White" />
+                            Content="Name" />
                         <Label
                             Grid.Row="1"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Author"
-                            Foreground="White" />
+                            Content="Author" />
                         <Label
                             Grid.Row="2"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Version"
-                            Foreground="White" />
+                            Content="Version" />
                         <Label
                             Grid.Row="3"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Description"
-                            Foreground="White" />
+                            Content="Description" />
                         <Label
                             Grid.Row="4"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Required By: "
-                            Foreground="White" />
+                            Content="Required By: " />
                         <Label
                             Grid.Row="5"
                             HorizontalAlignment="Center"
                             Background="Transparent"
-                            Content="Requires: "
-                            Foreground="White" />
+                            Content="Requires: " />
                         <TextBlock
                             x:Name="TBlkNameLocal"
                             Grid.Column="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Foreground="White"
+                            Style="{StaticResource TextBlockBaseStyle}"
                             Text="" />
                         <TextBlock
                             x:Name="TBlkAuthorLocal"
@@ -557,7 +553,7 @@
                             Grid.Column="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Foreground="White"
+                            Style="{StaticResource TextBlockBaseStyle}"
                             Text="" />
                         <TextBlock
                             x:Name="TBlkVerLocal"
@@ -565,7 +561,7 @@
                             Grid.Column="1"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Foreground="White"
+                            Style="{StaticResource TextBlockBaseStyle}"
                             Text="" />
                         <TextBox
                             x:Name="TBlkDescLocal"
@@ -574,7 +570,6 @@
                             Margin="5,5"
                             AutoWordSelection="True"
                             Background="Transparent"
-                            Foreground="White"
                             IsReadOnly="True"
                             Text=""
                             TextWrapping="WrapWithOverflow" />
@@ -585,7 +580,6 @@
                             Margin="5,5"
                             AutoWordSelection="True"
                             Background="Transparent"
-                            Foreground="White"
                             IsReadOnly="True"
                             Text=""
                             TextWrapping="WrapWithOverflow" />
@@ -596,7 +590,6 @@
                             Margin="5,5"
                             AutoWordSelection="True"
                             Background="Transparent"
-                            Foreground="White"
                             IsReadOnly="True"
                             Text=""
                             TextWrapping="WrapWithOverflow" />
@@ -613,4 +606,4 @@
             </TabItem>
         </TabControl>
     </Grid>
-</Window>
+</hc:Window>
