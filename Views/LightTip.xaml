@@ -6,6 +6,8 @@
     xmlns:hc="https://handyorg.github.io/handycontrol"
     xmlns:local="clr-namespace:RYCBEditorX.Dialogs.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="clr-namespace:Markdig.Wpf;assembly=Markdig.Wpf"
+    xmlns:mdx="clr-namespace:RYCBEditorX.Utils;assembly=RYCBEditorX.Utils"
     xmlns:viewmodels="clr-namespace:RYCBEditorX.Dialogs.ViewModels"
     Title="LightTip"
     Width="450"
@@ -27,12 +29,24 @@
     <DockPanel x:Name="MainPanel">
         <TextBlock
             x:Name="Icon"
-            DockPanel.Dock="Left"
             FontFamily="{StaticResource Iconfont}"
             FontSize="40"
             Foreground="{Binding IconBrush}"
             Text="{Binding Icon}" />
-        <TextBox
+        <mdx:MarkdownViewer
+            x:Name="ContentMd"
+            Width="385"
+            VerticalContentAlignment="Center"
+            BorderBrush="Transparent"
+            FontSize="12"
+            Markdown="{Binding Content}">
+            <mdx:MarkdownViewer.Resources>
+                <Style TargetType="FlowDocumentScrollViewer">
+                    <Setter Property="IsToolBarVisible" Value="False" />
+                </Style>
+            </mdx:MarkdownViewer.Resources>
+        </mdx:MarkdownViewer>
+        <!--<TextBox
             x:Name="Content"
             Width="385"
             VerticalContentAlignment="Center"
@@ -40,7 +54,7 @@
             FontSize="12"
             IsReadOnly="True"
             Text="{Binding Content}"
-            TextWrapping="WrapWithOverflow" />
+            TextWrapping="WrapWithOverflow" />-->
         <Button
             Width="24"
             Background="Transparent"

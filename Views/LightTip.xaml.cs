@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using Markdig.Wpf;
 using RYCBEditorX.Dialogs.ViewModels;
 
 namespace RYCBEditorX.Dialogs.Views;
@@ -31,13 +32,16 @@ public partial class LightTip : Window
         Instance = this;
         ViewModelInstance = new LightTipViewModel();
         DataContext = ViewModelInstance;
+        ContentMd.Markdown = ViewModelInstance.Content;
         if (GlobalConfig.Skin == "dark")
         {
             MainPanel.Background = (Brush)Application.Current.Resources["DarkBackGround"];
+            ContentMd.Theme = "dark";
         }
         else
         {
             MainPanel.Background = (Brush)Application.Current.Resources["LightBackGround"];
+            ContentMd.Theme = "light";
         }
     }
 
@@ -54,6 +58,7 @@ public partial class LightTip : Window
     private void Window_ContentRendered(object sender, EventArgs e)
     {
         _Timer.Start();
+        ContentMd.Markdown = ViewModelInstance.Content;
         var xpos = _Parent.Left + _Parent.ActualWidth - ActualWidth - 10;
         var ypos = _Parent.Top + _Parent.ActualHeight - ActualHeight - 10;
         if (_Parent.WindowState == WindowState.Maximized)
