@@ -11,7 +11,7 @@
     xmlns:viewmodels="clr-namespace:RYCBEditorX.Dialogs.ViewModels"
     Title="LightTip"
     Width="450"
-    Height="40"
+    Height="60"
     d:DataContext="{d:DesignInstance Type={x:Type viewmodels:LightTipViewModel}}"
     Activated="Window_ContentRendered"
     Background="{DynamicResource BackgroundBrush}"
