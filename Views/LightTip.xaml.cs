@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using Markdig.Wpf;
 using RYCBEditorX.Dialogs.ViewModels;
 
 namespace RYCBEditorX.Dialogs.Views;
+
 /// <summary>
 /// LightTip.xaml 的交互逻辑
 /// </summary>
@@ -68,5 +68,19 @@ public partial class LightTip : Window
         }
         Left = xpos;
         Top = ypos;
+    }
+
+    private void OpenHyperlink(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+    {
+        System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+        {
+            FileName = e.Parameter.ToString(),
+            UseShellExecute = true,
+        });
+    }
+
+    private void ClickOnImage(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+    {
+
     }
 }

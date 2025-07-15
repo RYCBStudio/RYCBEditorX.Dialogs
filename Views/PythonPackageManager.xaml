@@ -211,6 +211,7 @@
                 x:Name="Online"
                 Height="38"
                 Header="Pypi Online"
+                IsEnabled="False"
                 Style="{StaticResource TabItemStyle}">
                 <Grid Background="Transparent">
                     <Grid.ColumnDefinitions>
@@ -410,6 +411,7 @@
                 Cursor="Hand"
                 Header="Local Python"
                 Initialized="Local_Initialized"
+                Selector.IsSelected="True"
                 Style="{StaticResource TabItemStyle}">
                 <Grid Background="Transparent">
                     <Grid.ColumnDefinitions>
